@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(242, 252, 252);
+}
+#app {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	width: clamp(300px, 600px, 900px);
+	padding: 50px;
+	background-color: #abadad;
+}
+#app ul {
+	margin: 10px;
+	list-style: circle;
+}
+#app li {
+	padding: 5px;
+}
+#app input {
+	margin: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.input-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.input-box button {
+	padding: 10px 15px;
+	border-radius: 10px;
+	background-color: #3ba776;
+	border: none;
+	color: white;
+	cursor: pointer;
+	margin-left: 10px;
+}
+.input-box button:disabled {
+	background-color: rgb(102, 102, 102);
+}
+.input-box button:hover {
+	background-color: rgb(20, 68, 20);
+}
+.hight {
+	color: royalblue;
+}
+.header {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+	width: 100%;
+	border-radius: 20px;
+	padding: 10px;
+	background-color: #e3e3e3;
+}
+.header h1 {
+	width: 100%;
+	text-align: center;
+	color: #3ba776;
+}
+.header button {
+	padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border: none;
+	width: 30%;
+	margin: 15px;
+}
+.cancel {
+	background-color: tomato;
+}
+.cancel:hover {
+	background-color: rgb(138, 58, 43);
+}
+.add {
+	background-color: #3ba776;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
+}
+.add:hover {
+	background-color: #2b664b;
+}
+.purchased {
+	text-decoration: line-through;
+	color: gray;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <section id="app">
+        <div class="header">
+            <h1>{{title}}</h1>
+            <button v-if="editing" class="cancel" @click="cancel">
+                Cancel
+            </button>
+            <button v-else="editing" class="add" @click="editing = true">
+                Add Item
+            </button>
+        </div>
+
+        <div v-if="editing" class="input-box">
+            <input type="text" placeholder="Add an list" v-model="newItem" @keydown.enter="addNewItem">
+
+
+            <label>
+                <input type="checkbox" v-model="newItemHighPriority">
+                High Priority
+            </label>
+
+            <button @click="addNewItem" :disabled="newItem.trim().length === 0 ">
+                Add new item
+            </button>
+        </div>
+
+        <p v-if="items.length === 0">Nice job you bought all your items!!</p>
+        <ul>
+            <li v-for="item in reversedItems" :key="item.id" :class="{
+                    purchased:item.purchased,
+                    hight:item.highPriority
+                }" @click="togglePurchased(item)">
+                {{item.label}}
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>
